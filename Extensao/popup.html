@@ -1,0 +1,18 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ocultador 3000</title>
+</head>
+<body>
+  <button id="openNewTabButton">Abrir Nova Guia no Grafana</button>
+
+  <script>
+    document.getElementById("openNewTabButton").addEventListener("click", function () {
+      chrome.action.openPopup();
+      chrome.action.setPopup({ popup: "" }); // Fecha o popup atual
+      chrome.action.openPopup({ popup: "new_tab" }); // Abre o novo popup
+    });
+  </script>
+</body>
+</html>
